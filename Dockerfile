@@ -16,7 +16,7 @@ WORKDIR /app
 RUN git clone https://github.com/DrewThomasson/ebook2audiobookSTYLETTS2.git
 
 # Pip install the requirments file
-RUN pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
 # Download the spaCy language model
 RUN python -m spacy download en_core_web_sm
