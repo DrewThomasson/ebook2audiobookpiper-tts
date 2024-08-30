@@ -9,6 +9,7 @@ Convert eBooks to audiobooks effortlessly using a Docker container. This project
 - **Language Support:** Includes multiple languages and accents for TTS.
 - **User-Friendly Interface:** Easy-to-use Gradio interface accessible via your web browser.
 - **Dockerized:** Run the entire setup with a single Docker command.
+- **High Speed** Get High speed audiobook generation on even a low end laptop.
 
 
 ## 🌐 Supported Languages
