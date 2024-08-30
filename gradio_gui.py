@@ -11,15 +11,14 @@ import os
 import nltk
 from nltk.tokenize import sent_tokenize
 import sys
-import torch
 from tqdm import tqdm
 import gradio as gr
 from gradio import Progress
 import urllib.request
 import zipfile
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Device selected is: {device}")
+#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#print(f"Device selected is: {device}")
 
 nltk.download('punkt')  # Make sure to download the necessary models
 
@@ -406,7 +405,6 @@ def create_chapter_labeled_book(ebook_file_path):
 import os
 import subprocess
 import sys
-import torchaudio
 
 # Check if Calibre's ebook-convert tool is installed
 def calibre_installed():
@@ -419,7 +417,6 @@ def calibre_installed():
 
 
 import os
-import torch
 from nltk.tokenize import sent_tokenize
 from pydub import AudioSegment
 # Assuming split_long_sentence and wipe_folder are defined elsewhere in your code
