@@ -647,6 +647,17 @@ def download_voice(voice_key):
     
     return f"Downloaded {len(files)} files for {voice_key}."
 
+# Define a new function to chain the download and conversion processes
+def download_and_convert(ebook_file, target_voice_file, voice_key, progress=gr.Progress()):
+    # First, download the voice files
+    download_message = download_voice(voice_key)
+    
+    # Then, proceed with the conversion
+    conversion_result, m4b_filepath = convert_ebook_to_audio(ebook_file, target_voice_file, voice_key, progress)
+    
+    # Combine the download message with the conversion result
+    return f"{download_message}\n{conversion_result}", m4b_filepath
+
 # Function to get details of the selected voice
 def get_voice_details(voice_key):
     voice_info = voices_data[voice_key]
@@ -693,7 +704,7 @@ with gr.Blocks(theme=theme) as demo:
     download_files = gr.File(label="Download Files", interactive=False)
 
     convert_btn.click(
-        convert_ebook_to_audio,
+        download_and_convert,
         inputs=[ebook_file, target_voice_file, voice_selector],  # Now voice_selector is defined
         outputs=[output, audio_player]
     )
