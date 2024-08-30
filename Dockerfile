@@ -6,23 +6,17 @@ RUN apt-get update && \
     apt-get install -y calibre ffmpeg git nano wget unzip git && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Python packages
-RUN pip install --no-cache-dir piper-tts pydub nltk beautifulsoup4 ebooklib tqdm spacy gradio
-
 # Set the working directory
 WORKDIR /app
 
 #No do a git clone instead
 RUN git clone https://github.com/DrewThomasson/ebook2audiobookpiper-tts.git
 
-# Pip install the requirments file
-RUN pip install -r requirements.txt
+# Install Python packages
+RUN pip install --no-cache-dir piper-tts pydub nltk beautifulsoup4 ebooklib tqdm spacy gradio
 
 # Download the spaCy language model
 RUN python -m spacy download en_core_web_sm
-
-# Run Piper-tts Test script
-RUN python ebook2audiobookpiper-tts/gradio_gui.py
 
 
 # Replace the NLTK folder with the backup
@@ -37,9 +31,10 @@ RUN echo "Replacing the nltk folder with the nltk folder backup I pulled from a 
     rm -rf "$TEMP_DIR" && \
     echo "NLTK Files Replacement complete."
 
-# Command to run piper-tts with the specified model and text
-#CMD echo 'Welcome to the world of speech synthesis!' | piper --model /app/en_US-norman-medium.onnx --output_file /app/welcome.wav
 
-# NO Default command
-CMD ["python", "ebook2audiobookpiper-tts/gradio_gui.py"]
+# Set the working directory
+WORKDIR /app/ebook2audiobookpiper-tts
+
+# NO USE THIS Default command
+CMD ["python", "gradio_gui.py"]
 #To run this docker on your computer run docker run -it athomasson2/ebook2audiobookpiper-tts
