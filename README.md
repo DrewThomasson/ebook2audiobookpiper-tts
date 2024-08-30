@@ -143,7 +143,7 @@ For more details and updates, visit the [DockerHub repository](https://hub.docke
 
 ## 🙏 Special Thanks
 
-- **Piper-tts**: [eSpeak-ng GitHub]([https://github.com/espeak-ng/espeak-ng](https://github.com/rhasspy/piper))
+- **Piper-tts**: [Piper-tts on GitHub]([https://github.com/espeak-ng/espeak-ng](https://github.com/rhasspy/piper))
 - **Calibre**: [Calibre Website](https://calibre-ebook.com)
 
 
