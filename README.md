@@ -71,6 +71,17 @@ docker run -it --rm -p 7860:7860 athomasson2/ebook2audiobookpiper-tts:latest
 
 This will start the Gradio interface on port `7860`. You can access it by navigating to `http://localhost:7860` in your web browser.
 
+## 🌐 Offline Mode
+
+For a fully offline experience with all Piper TTS voice models bundled, use the following Docker command:
+
+```bash
+docker run -it --rm -p 7860:7860 athomasson2/ebook2audiobookpiper-tts:latest_large
+```
+
+This version comes preloaded with every Piper TTS voice model, ensuring that you can convert eBooks to audiobooks without needing an internet connection. Perfect for uninterrupted usage in any environment!
+
+
 ## 🎛️ Gradio Interface Customizations
 
 In the Gradio interface, you can customize the following settings for your audiobook conversion:
