@@ -625,44 +625,38 @@ def download_voice(voice_key):
     files = voice_info["files"]
     
     download_dir = os.path.join(os.getcwd(), voice_key)
-    os.makedirs(download_dir, exist_ok=True)
+    os.makedirs(download_dir, exist_ok=True)  # Create the folder if it doesn't exist
     
-    report = []
-    files_to_download = []
-
-    # Check for each file's existence
+    downloaded_files = 0
+    
     for file_path, file_info in files.items():
         local_file_path = os.path.join(download_dir, os.path.basename(file_path))
+        
+        # Check if the file already exists
         if os.path.exists(local_file_path):
-            report.append(f"Found: {os.path.basename(file_path)} - No download needed.")
+            print(f"File '{os.path.basename(file_path)}' already exists. Skipping download.")
         else:
-            report.append(f"Missing: {os.path.basename(file_path)} - Will download.")
-            files_to_download.append((file_path, local_file_path))
+            # Download the file with tqdm progress bar in the terminal
+            url = BASE_URL + file_path
+            response = requests.get(url, stream=True)
+            total_size = int(response.headers.get('content-length', 0))
+            with open(local_file_path, 'wb') as file, tqdm(
+                desc=f"Downloading {os.path.basename(file_path)}",
+                total=total_size,
+                unit='B',
+                unit_scale=True,
+                unit_divisor=1024,
+            ) as bar:
+                for data in response.iter_content(1024):
+                    file.write(data)
+                    bar.update(len(data))
+            downloaded_files += 1
     
-    # If all files are present, return the report
-    if not files_to_download:
-        report.append("All files are present. No downloads were necessary.")
-        return "\n".join(report)
-    
-    # Download missing files
-    for file_path, local_file_path in files_to_download:
-        url = BASE_URL + file_path
-        response = requests.get(url, stream=True)
-        total_size = int(response.headers.get('content-length', 0))
-        with open(local_file_path, 'wb') as file, tqdm(
-            desc=f"Downloading {os.path.basename(file_path)}",
-            total=total_size,
-            unit='B',
-            unit_scale=True,
-            unit_divisor=1024,
-        ) as bar:
-            for data in response.iter_content(1024):
-                file.write(data)
-                bar.update(len(data))
-        report.append(f"Downloaded: {os.path.basename(file_path)}")
-    
-    report.append(f"Downloaded {len(files_to_download)} missing files for {voice_key}.")
-    return "\n".join(report)
+    if downloaded_files == 0:
+        return f"All files for {voice_key} already exist. No files were downloaded."
+    else:
+        return f"Downloaded {downloaded_files} files for {voice_key}."
+
 
 
 # Define a new function to chain the download and conversion processes
