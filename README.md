@@ -1,6 +1,6 @@
 # 📚 eBook to Audiobook Converter with Piper-tts
 
-Convert eBooks to audiobooks effortlessly using a Docker container. This project leverages Calibre for eBook conversion and eSpeak-ng for text-to-speech, all wrapped in a Gradio interface.
+Convert eBooks to audiobooks effortlessly using a Docker container. This project leverages Calibre for eBook conversion and Piper-tts for text-to-speech, all wrapped in a Gradio interface.
 
 ## 🌟 Features
 
