@@ -722,11 +722,13 @@ with gr.Blocks(theme=theme) as demo:
     download_btn = gr.Button("Download Audiobook Files")
     download_files = gr.File(label="Download Files", interactive=False)
 
+
     convert_btn.click(
         download_and_convert,
-        inputs=[ebook_file, target_voice_file, voice_selector],  # Now voice_selector is defined
+        inputs=[ebook_file, voice_selector],  # Removed target_voice_file
         outputs=[output, audio_player]
     )
+
 
     download_btn.click(
         download_audiobooks,
