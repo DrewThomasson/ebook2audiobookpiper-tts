@@ -705,7 +705,7 @@ with gr.Blocks(theme=theme) as demo:
     with gr.Row():
         with gr.Column(scale=3):
             ebook_file = gr.File(label="eBook File")
-            target_voice_file = gr.File(label="Target Voice File (Optional)")
+            target_voice_file = gr.File(label="Target Voice File (Optional)", visible=False)
 
     voice_selector = gr.Dropdown(label="Select Voice", choices=voice_keys)  # Define voice_selector here
 
@@ -729,9 +729,7 @@ with gr.Blocks(theme=theme) as demo:
     )
     
     # Adding the Download Voices Section
-    gr.Markdown("## Download Additional Voices")
-    
-    download_voice_btn = gr.Button("Download Voice Files")
+    download_voice_btn = gr.Button("Download Voice Files", visible=False)
     
     voice_selector.change(get_voice_details, voice_selector, voice_details)
     download_voice_btn.click(download_voice, voice_selector, None)
