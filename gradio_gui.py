@@ -709,6 +709,8 @@ with gr.Blocks(theme=theme) as demo:
 
     voice_selector = gr.Dropdown(label="Select Voice", choices=voice_keys)  # Define voice_selector here
 
+    voice_details = gr.Markdown()
+
     convert_btn = gr.Button("Convert to Audiobook", variant="primary")
     output = gr.Textbox(label="Conversion Status")
     audio_player = gr.Audio(label="Audiobook Player", type="filepath")
@@ -729,7 +731,6 @@ with gr.Blocks(theme=theme) as demo:
     # Adding the Download Voices Section
     gr.Markdown("## Download Additional Voices")
     
-    voice_details = gr.Markdown()
     download_voice_btn = gr.Button("Download Voice Files")
     
     voice_selector.change(get_voice_details, voice_selector, voice_details)
