@@ -10,38 +10,40 @@ Convert eBooks to audiobooks effortlessly using a Docker container. This project
 - **User-Friendly Interface:** Easy-to-use Gradio interface accessible via your web browser.
 - **Dockerized:** Run the entire setup with a single Docker command.
 
-## 🌐 Supportted languages:
-Arabic (ar_JO)
-Catalan (ca_ES)
-Czech (cs_CZ)
-Welsh (cy_GB)
-Danish (da_DK)
-German (de_DE)
-Greek (el_GR)
-English (en_GB, en_US)
-Spanish (es_ES, es_MX)
-Finnish (fi_FI)
-French (fr_FR)
-Hungarian (hu_HU)
-Icelandic (is_IS)
-Italian (it_IT)
-Georgian (ka_GE)
-Kazakh (kk_KZ)
-Luxembourgish (lb_LU)
-Nepali (ne_NP)
-Dutch (nl_BE, nl_NL)
-Norwegian (no_NO)
-Polish (pl_PL)
-Portuguese (pt_BR, pt_PT)
-Romanian (ro_RO)
-Russian (ru_RU)
-Serbian (sr_RS)
-Swedish (sv_SE)
-Swahili (sw_CD)
-Turkish (tr_TR)
-Ukrainian (uk_UA)
-Vietnamese (vi_VN)
-Chinese (zh_CN)
+
+## 🌐 Supported Languages
+
+- **Arabic** (ar_JO)
+- **Catalan** (ca_ES)
+- **Czech** (cs_CZ)
+- **Welsh** (cy_GB)
+- **Danish** (da_DK)
+- **German** (de_DE)
+- **Greek** (el_GR)
+- **English** (en_GB, en_US)
+- **Spanish** (es_ES, es_MX)
+- **Finnish** (fi_FI)
+- **French** (fr_FR)
+- **Hungarian** (hu_HU)
+- **Icelandic** (is_IS)
+- **Italian** (it_IT)
+- **Georgian** (ka_GE)
+- **Kazakh** (kk_KZ)
+- **Luxembourgish** (lb_LU)
+- **Nepali** (ne_NP)
+- **Dutch** (nl_BE, nl_NL)
+- **Norwegian** (no_NO)
+- **Polish** (pl_PL)
+- **Portuguese** (pt_BR, pt_PT)
+- **Romanian** (ro_RO)
+- **Russian** (ru_RU)
+- **Serbian** (sr_RS)
+- **Swedish** (sv_SE)
+- **Swahili** (sw_CD)
+- **Turkish** (tr_TR)
+- **Ukrainian** (uk_UA)
+- **Vietnamese** (vi_VN)
+- **Chinese** (zh_CN)
 
 ## 🎥 Demo
 
@@ -135,7 +137,7 @@ docker build -t athomasson2/ebook2audiobookpiper-tts:latest .
 
 Explore the full power of this converter by running your Docker container. Customize the settings in the Gradio interface to suit your needs.
 
-For more details and updates, visit the [GitHub repository](https://github.com/DrewThomasson/ebook2audiobookpiper-tts).
+For more details and updates, visit the [DockerHub repository](https://hub.docker.com/repository/docker/athomasson2/ebook2audiobookpiper-tts).
 
 
 ## 🙏 Special Thanks
