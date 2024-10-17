@@ -66,7 +66,7 @@ https://github.com/user-attachments/assets/7d2328b9-ac65-4485-b1b3-fe1006f041c6
 To quickly get started with this eBook to Audiobook converter, simply run the following Docker command:
 
 ```bash
-docker run -it --rm -p 7860:7860 athomasson2/ebook2audiobookpiper-tts:latest
+docker run -it -p 7860:7860 --platform=linux/amd64 registry.hf.space/drewthomasson-ebook2audiobookpiper-tts:latest python app.py 
 ```
 
 This will start the Gradio interface on port `7860`. You can access it by navigating to `http://localhost:7860` in your web browser.
