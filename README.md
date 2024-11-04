@@ -60,6 +60,7 @@ https://github.com/user-attachments/assets/7d2328b9-ac65-4485-b1b3-fe1006f041c6
 
 
 
+## Open in free google colab! [![Free Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DrewThomasson/Auto-Scalable-Speaker-Attribution-dataset/blob/main/notebooks/ebook2audiobook_piper_tts.ipynb)
 
 ## 🚀 Quick Start
 
