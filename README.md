@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This repo is Depricated
+> Use the main [ebook2audiobook](https://github.com/DrewThomasson/ebook2audiobook/) repo for up-to date piper tts support.
+
 # 📚 eBook to Audiobook Converter with Piper-tts
 
 Convert eBooks to audiobooks effortlessly using a Docker container. This project leverages Calibre for eBook conversion and Piper-tts for text-to-speech, all wrapped in a Gradio interface.
